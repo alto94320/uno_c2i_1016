@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>UNO</title>
+		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+		<script src="https://use.fontawesome.com/2d672d9c4e.js"></script>
+		<script src="js/plateau.js"></script>
+		<script src="js/cards.js"></script>
+		<script src="js/player.js"></script>
+		<script>
+		
+			var player1 = new Plateau();
+			var player1 = new Player({pseudo: "gui"});
+			var player2 = new Player({pseudo: "tom"});
+			var cardTest = new Card({couleur: "blue", numero: 9});
+			console.log(player1)
+			console.log(cardTest)
+		</script>
+	</head>
+	<body>
+		<h1 class="title">UNO</h1>
+		<button id="start_game">commencer partie</button>
+		<hr>
+		<ul id="connected_players">
+		
+		</ul>
+	</body>
+</html>
