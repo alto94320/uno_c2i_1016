@@ -1,0 +1,17 @@
+#plateau {
+	display: flex;
+}
+
+#pioche {
+	display: flex;
+}
+
+#tas {
+	display: flex;
+}
+
+#pioche, #tas {
+	border: 4px dashed silver;
+	height: 130px;
+	height: 130px;
+}
