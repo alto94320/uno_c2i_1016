@@ -3,13 +3,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>UNO</title>
+<!--		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>-->
+		<script src="js/libs/socket.io.min.js"></script>
 		<script src="https://use.fontawesome.com/2d672d9c4e.js"></script>
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 		<script src="https://use.fontawesome.com/2d672d9c4e.js"></script>
-		<script src="js/libs/utility.js"></script>
-		<script src="js/plateau.js"></script>
-		<script src="js/cards.js"></script>
-		<script src="js/player.js"></script>
+		<script src="/js/libs/utility.js"></script>
+		<script src="/js/plateau.js"></script>
+		<script src="/js/cards.js"></script>
+		<script src="/js/player.js"></script>
 		<script>
 			window.onload = function start() {
 				var plateau = new Plateau();
@@ -19,7 +21,7 @@
 	</head>
 	<body>
 		<header>
-			<img src="medias/images/logo.png" id="logo">
+			<img src="/medias/images/logo.png" id="logo">
 		</header>
 		<button id="commencer">commencer partie</button>
 		<input id="nom_joueur" placeholder="choisir un pseudo">
@@ -28,6 +30,9 @@
 		<hr>
 		nombre joueurs: <span id="nbr_joueurs">0</span>
 		<hr>
+        <h1>Communication avec socket.io !</h1>
+        <button id="test_socket"></button>
+        <hr>
 		<h2>Joueurs connectés</h2>
 		<ul id="joueurs_connectes">
 			<li>personne pour le moment...</li>
