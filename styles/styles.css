@@ -1,3 +1,18 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 16px;
+	font-family: arial;
+}
+
+ul {
+	list-style: none;
+}
+
 #plateau {
 	display: flex;
 	background: url("../medias/images/table.png");
@@ -33,4 +48,27 @@
 
 #logo {
 	max-width: 120px;
+}
+
+#avatars {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 33%;
+}
+
+#avatars li {
+	cursor: pointer;
+	max-width: 64px;
+	border: 2px solid transparent;
+}
+#avatars img {
+	pointer-events: none;
+}
+
+#avatars li:hover, #avatars li.active {
+	border: 2px solid orange;
+}
+
+#avatars img{
+	max-width: inherit;
 }
