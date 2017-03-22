@@ -3,7 +3,7 @@ Player = function Player(conf) {
 	"use strict";
 	this.pseudo = conf.pseudo || "random player";
 	this.points = 0;
-	this.cards = [];
+	this.cartes = [];
 	this.avatar = null;
 };
 

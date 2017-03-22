@@ -1,14 +1,13 @@
 var instance, Plateau = function Plateau(conf) {
 	instance = this;
-	this.cards = this.genererCartes();
-	this.players = [];
+	this.cartes = this.genererCartes();
+	this.joueurs = [];
 	this.observerActions();
-	
-	log(this);
+	this.observerActions();
+	this.cartes.toutes = instance.cartes.vertes.concat(instance.cartes.bleues).concat(instance.cartes.jaunes).concat(instance.cartes.rouges);
 };
 
 Plateau.prototype.genererCartes = function genererCartes() {
-	// 19/couleur(0 à 9 ... un zéro, deux de chaque autres, 76 en tout)
 	return {
 		vertes: this.creerSetCouleur("vertes"),
 		bleues: this.creerSetCouleur("bleues"),
@@ -18,62 +17,95 @@ Plateau.prototype.genererCartes = function genererCartes() {
 };
 
 Plateau.prototype.creerSetCouleur = function creerSetCouleur(color) {
-	var cards = [], i;
+	var cartes = [], i;
 	
 	for (i = 0; i < 10; i += 1) {
 		if (i === 0) {
-			cards.push(new Card({couleur: color, numero: i}));
+			cartes.push(new Card({couleur: color, numero: i}));
 		} else {
-			cards.push(new Card({couleur: color, numero: i}));
-			cards.push(new Card({couleur: color, numero: i}));
+			cartes.push(new Card({couleur: color, numero: i}));
+			cartes.push(new Card({couleur: color, numero: i}));
 		}
 	}
-	cards.push(new Card({
+	cartes.push(new Card({
 		couleur: color,
 		numero: null,
 		special: "+2",
 	}));
-	cards.push(new Card({
+	cartes.push(new Card({
 		couleur: color,
 		numero: null,
 		special: "+2",
 	}));
-	cards.push(new Card({
+	cartes.push(new Card({
 		couleur: color,
 		numero: null,
 		special: "Inversion",
 	}));
-	cards.push(new Card({
+	cartes.push(new Card({
 		couleur: color,
 		numero: null,
 		special: "Inversion",
 	}));
-	cards.push(new Card({
+	cartes.push(new Card({
 		couleur: color,
 		numero: null,
 		special: "Passe ton tour",
 	}));
-	cards.push(new Card({
+	cartes.push(new Card({
 		couleur: color,
 		numero: null,
 		special: "Passe ton tour",
 	}));
 			
-	return cards;
+	return cartes;
 };
 
 Plateau.prototype.ajouterJoueur = function ajouterJoueur(e) {
-	if (instance.players.length <= 10) {
-		instance.players.push(
+	if (instance.joueurs.length <= 10) {
+		instance.joueurs.push(
 			new Player({
-				pseudo: byId("player_name").value
+				pseudo: byId("nom_joueur").value
 			})
 		);
 	}
-	log(instance.players);
+	log(instance)
 };
 
 Plateau.prototype.observerActions = function observerActions() {
-	log("ici");
-	byId("add_player").onclick = this.ajouterJoueur;
+	byId("rejoindre").onclick = this.ajouterJoueur;
+	byId("commencer").onclick = this.demarrerPartie;
+};
+
+Plateau.prototype.melangerCartes = function melangerCartes(cartes) {
+	return shuffleArray(cartes);
+};
+
+Plateau.prototype.demarrerPartie = function demarrerPartie() {
+	/*
+	if (instance.joueurs.length < 2) {
+		return window.alert("dÃ©solÃ©, pas assez de joueurs dans le salon");
+	}
+	*/
+	
+	instance.distribuerCartes();
+};
+
+Plateau.prototype.distribuerCartes = function distribuerCartes() {
+	
+}
+Plateau.prototype.distribuerCartes = function distribuerCartes() {
+	var cartes = instance.cartes.toutes;
+	
+	instance.joueurs.forEach(function parcourir(joueur) {
+		var rand;
+
+		while (joueur.cartes.length < 7) {
+			rand = Math.floor(Math.random() * (cartes.length + 1));
+			joueur.cartes.push(instance.cartes.toutes[rand]);
+		}
+	});
+	
+	log(instance.joueurs);
+	
 };
