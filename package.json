@@ -1,0 +1,98 @@
+{
+  "name": "root",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "c2i crew",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+
+{
+  "keywords": ["mots clés", "pertinents", "courts", "pour", "la recherche"]
+}
+{
+  "license": "MIT",
+  "license": "(MIT or GPL-3.0)",
+  "license": "SEE LICENSE IN NOM_DU_FICHIER_DE_LICENCE.txt",
+  "license": "UNLICENSED"
+}
+{
+  "homepage": "https://votre-package.org"
+}
+{
+  "author": { "name": "Votre Nom", "email": "votre_email@exemple.com", "url": "http://votre-site.com" },
+  "author": "Votre Nom <votre_email@exemple.com> (http://votre-site.com)"
+}
+{
+  "files": [
+    "filename.js",
+    "directory/",
+    "glob/*.{js,json}"
+  ]
+}
+{
+  "main": "filename.js"
+}
+{
+  "bin": "bin.js",
+  "bin": {
+    "ma-commande": "bin/ma-commande.js",
+    "une-autre-commande": "bin/une-autre-commande"
+  }
+}
+{
+  "man": "./man/doc.1",
+  "man": ["./man/doc.1", "./man/doc.2"]
+}
+{
+  "directories": {
+    "lib": "chemin/vers/bibliotheques/",
+    "bin": "chemin/vers/binaires/",
+    "man": "chemin/vers/manuels/",
+    "doc": "chemin/vers/doc/",
+    "example": "chemin/vers/exemple/"
+  }
+}
+{
+  "scripts": {
+    "build-project": "node build-project.js"
+  }
+}
+{
+  "config": {
+    "port": "8080"
+  }
+}
+{
+  "dependencies": {
+    "package-1": "^3.1.4"
+  }
+}
+{
+  "flat": true
+}
+{
+  "engines": {
+    "node": ">=4.4.7 <7.0.0",
+    "zlib": "^1.2.8",
+    "yarn": "^0.14.0"
+  }
+}
+{
+  "os": ["darwin", "linux"],
+  "os": ["!win32"]
+}
+{
+  "private": true
+}
+{
+  "publishConfig": {
+    ...
+  }
+}
+}
