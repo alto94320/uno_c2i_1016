@@ -15,9 +15,6 @@ ul {
 
 #plateau {
 	display: flex;
-	background: url("../medias/images/table.png");
-	background-size: contain;
-    background-repeat: no-repeat;
 	min-height: 1200px;
 	max-height: 1200px;
 	align-items: center;
