@@ -1,6 +1,10 @@
-Plateau = function Plateau(conf) {
+var instance, Plateau = function Plateau(conf) {
+	instance = this;
 	this.cards = this.genererCartes();
-	console.log(this);
+	this.players = [];
+	this.observerActions();
+	
+	log(this);
 };
 
 Plateau.prototype.genererCartes = function genererCartes() {
@@ -14,9 +18,9 @@ Plateau.prototype.genererCartes = function genererCartes() {
 };
 
 Plateau.prototype.creerSetCouleur = function creerSetCouleur(color) {
-	var cards = [], i, limit = 10;
+	var cards = [], i;
 	
-	for (i = 0; i < limit; i += 1) {
+	for (i = 0; i < 10; i += 1) {
 		if (i === 0) {
 			cards.push(new Card({couleur: color, numero: i}));
 		} else {
@@ -24,5 +28,52 @@ Plateau.prototype.creerSetCouleur = function creerSetCouleur(color) {
 			cards.push(new Card({couleur: color, numero: i}));
 		}
 	}
+	cards.push(new Card({
+		couleur: color,
+		numero: null,
+		special: "+2",
+	}));
+	cards.push(new Card({
+		couleur: color,
+		numero: null,
+		special: "+2",
+	}));
+	cards.push(new Card({
+		couleur: color,
+		numero: null,
+		special: "Inversion",
+	}));
+	cards.push(new Card({
+		couleur: color,
+		numero: null,
+		special: "Inversion",
+	}));
+	cards.push(new Card({
+		couleur: color,
+		numero: null,
+		special: "Passe ton tour",
+	}));
+	cards.push(new Card({
+		couleur: color,
+		numero: null,
+		special: "Passe ton tour",
+	}));
+			
 	return cards;
+};
+
+Plateau.prototype.ajouterJoueur = function ajouterJoueur(e) {
+	if (instance.players.length <= 10) {
+		instance.players.push(
+			new Player({
+				pseudo: byId("player_name").value
+			})
+		);
+	}
+	log(instance.players);
+};
+
+Plateau.prototype.observerActions = function observerActions() {
+	log("ici");
+	byId("add_player").onclick = this.ajouterJoueur;
 };

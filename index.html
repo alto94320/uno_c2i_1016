@@ -5,25 +5,28 @@
 		<title>UNO</title>
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 		<script src="https://use.fontawesome.com/2d672d9c4e.js"></script>
+		<script src="js/libs/utility/utility.js"></script>
 		<script src="js/plateau.js"></script>
 		<script src="js/cards.js"></script>
 		<script src="js/player.js"></script>
 		<script>
-		
-			var player1 = new Plateau();
-			var player1 = new Player({pseudo: "gui"});
-			var player2 = new Player({pseudo: "tom"});
-			var cardTest = new Card({couleur: "blue", numero: 9});
-			console.log(player1)
-			console.log(cardTest)
+			window.onload = function start() {
+				var plateau = new Plateau();
+				console.log(plateau);
+			}
 		</script>
 	</head>
 	<body>
 		<h1 class="title">UNO</h1>
 		<button id="start_game">commencer partie</button>
+		<input id="player_name" placeholder="choisir un pseudo">
+		<button id="add_player">rejoindre partie</button>
 		<hr>
+		nombre joueurs: <span id="count_players">0</span>
+		<hr>
+		<h2>Joueurs connectés</h2>
 		<ul id="connected_players">
-		
+			<li>personne pour le moment...</li>
 		</ul>
 	</body>
 </html>
