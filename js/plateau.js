@@ -62,14 +62,17 @@ Plateau.prototype.creerSetCouleur = function creerSetCouleur(color) {
 };
 
 Plateau.prototype.ajouterJoueur = function ajouterJoueur(e) {
-	if (instance.joueurs.length <= 10) {
+	var nb;
+	if (instance.joueurs.length < 10) {
 		instance.joueurs.push(
 			new Player({
 				pseudo: byId("nom_joueur").value
 			})
 		);
+		nb = Number(byId("nbr_joueurs").textContent);
+		byId("nbr_joueurs").textContent = nb += 1;
 	}
-	log(instance)
+
 };
 
 Plateau.prototype.observerActions = function observerActions() {

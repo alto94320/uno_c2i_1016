@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>UNO</title>
+		<script src="https://use.fontawesome.com/2d672d9c4e.js"></script>
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 		<script src="https://use.fontawesome.com/2d672d9c4e.js"></script>
 		<script src="js/libs/utility.js"></script>
@@ -17,12 +18,15 @@
 		</script>
 	</head>
 	<body>
-		<h1 class="title">UNO</h1>
+		<header>
+			<img src="medias/images/logo.png" id="logo">
+		</header>
 		<button id="commencer">commencer partie</button>
 		<input id="nom_joueur" placeholder="choisir un pseudo">
 		<button id="rejoindre">rejoindre partie</button>
+		<i class="fa fa-user-plus" aria-hidden="true"></i>
 		<hr>
-		nombre joueurs: <span id="count_players">0</span>
+		nombre joueurs: <span id="nbr_joueurs">0</span>
 		<hr>
 		<h2>Joueurs connectés</h2>
 		<ul id="joueurs_connectes">
