@@ -1,17 +1,26 @@
 #plateau {
 	display: flex;
+
+}
+
+#cartes_communes {
+	display: flex;
+	flex: 1;
+	max-width: 540px;
+	justify-content: center;
 }
 
 #pioche {
-	display: flex;
+	border-color: green;
 }
 
 #tas {
-	display: flex;
+	border-color: orange;
 }
 
 #pioche, #tas {
-	border: 4px dashed silver;
-	height: 130px;
-	height: 130px;
+	width: 220px;
+	border-width: 4px;
+	border-style: dashed;
+	height: 320px;
 }
