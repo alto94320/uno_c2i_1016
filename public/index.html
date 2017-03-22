@@ -3,17 +3,17 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>UNO</title>
-<!--		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>-->
 		<script src="js/libs/socket.io.min.js"></script>
 		<script src="https://use.fontawesome.com/2d672d9c4e.js"></script>
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
-		<script src="https://use.fontawesome.com/2d672d9c4e.js"></script>
 		<script src="/js/libs/utility.js"></script>
+		<script src="js/ui.js"></script>
 		<script src="/js/plateau.js"></script>
 		<script src="/js/cards.js"></script>
 		<script src="/js/player.js"></script>
 		<script>
 			window.onload = function start() {
+				var ui = new UI();
 				var plateau = new Plateau();
 				console.log(plateau);
 			}
